@@ -1,0 +1,27 @@
+body {
+  font-family: 'Inter', sans-serif; /* Aplica a fonte Inter globalmente */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header {
+  background-color: #123456; /* Cor de fundo do cabeçalho */
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+main {
+  padding: 20px;
+}
+
+footer {
+  background-color: #123456; /* Cor de fundo do rodapé */
+  color: white;
+  text-align: center;
+  padding: 10px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
