@@ -60,14 +60,6 @@ A aplicação está disponível publicamente e pode ser acessada para interaçã
   </a>
 </p>
 
-## 🎬 Demonstração Visual
-
-<p align="center">
-  <img src="./public/demo.gif" alt="Demonstração do Seven Days of Code" width="800">
-</p>
-
-> **Demonstração interativa:** O GIF acima mostra os três projetos em funcionamento - comparador de tipos, formulário inteligente e árvore de decisões de carreira.
-
 ## Arquitetura do Sistema
 
 A aplicação foi concebida como um **Monólito Front-end** com renderização primariamente no lado do cliente (Client-Side Rendering - CSR), utilizando a arquitetura do **App Router** do Next.js. Essa escolha oferece um ambiente de desenvolvimento estruturado, otimizações de build e um caminho claro para futuras expansões.
