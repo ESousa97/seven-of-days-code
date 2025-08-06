@@ -299,3 +299,4 @@ Este projeto é distribuído sob a **Licença MIT**, permitindo uso, cópia, mod
 
 
 > ✨ **Criado em:** 5 de jul. de 2024 às 23:27
+
