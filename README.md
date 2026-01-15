@@ -20,11 +20,14 @@ A metodologia empregada baseia-se em um stack tecnológico robusto e contemporâ
 
 ## Badges Abrangentes
 
-![Linguagem Principal](https://img.shields.io/github/languages/top/ESousa97/seven-of-days-code?style=for-the-badge&logo=typescript&logoColor=white)
-![Tamanho do Repositório](https://img.shields.io/github/repo-size/ESousa97/seven-of-days-code?style=for-the-badge&label=Tamanho)
-![Último Commit](https://img.shields.io/github/last-commit/ESousa97/seven-of-days-code?style=for-the-badge&logo=git&label=Último%20Commit)
-![Issues Abertas](https://img.shields.io/github/issues/ESousa97/seven-of-days-code?style=for-the-badge&logo=github&label=Issues)
-![Deploy Vercel](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)
+![JavaScript](https://img.shields.io/github/languages/top/ESousa97/seven-of-days-code?style=flat&label=javascript&labelColor=1f2937&color=2563eb)
+![Repo size](https://img.shields.io/github/repo-size/ESousa97/seven-of-days-code?style=flat&label=repo%20size&labelColor=1f2937&color=0ea5e9)
+![Last commit](https://img.shields.io/github/last-commit/ESousa97/seven-of-days-code?style=flat&label=last%20commit&labelColor=1f2937&color=10b981)
+![Contributors](https://img.shields.io/github/contributors/ESousa97/seven-of-days-code?style=flat&label=contributors&labelColor=1f2937&color=6366f1)
+[![CI](https://img.shields.io/github/actions/workflow/status/ESousa97/seven-of-days-code/ci.yml?branch=main&style=flat&label=CI&labelColor=1f2937&color=22c55e)](https://github.com/ESousa97/seven-of-days-code/actions/workflows/ci.yml)
+[![CodeQL](https://img.shields.io/github/actions/workflow/status/ESousa97/seven-of-days-code/codeql.yml?branch=main&style=flat&label=CodeQL&labelColor=1f2937&color=3b82f6)](https://github.com/ESousa97/seven-of-days-code/actions/workflows/codeql.yml)
+[![CodeFactor](https://img.shields.io/codefactor/grade/github/ESousa97/seven-of-days-code?style=flat&label=code%20quality&labelColor=1f2937&color=ef4444)](https://www.codefactor.io/repository/github/ESousa97/seven-of-days-code)
+![CodeRefator](https://img.shields.io/badge/coderefator-A%2B-8b5cf6?style=flat&labelColor=1f2937)
 
 ## Sumário (Table of Contents)
 
@@ -226,6 +229,7 @@ npm run dev        # Servidor de desenvolvimento com Fast Refresh
 npm run build      # Build de produção otimizado
 npm run start      # Executa build de produção localmente
 npm run lint       # Análise de código com ESLint
+npm test           # Executa testes automatizados
 ```
 
 ## ⚙️ Uso Avançado e Exemplos
@@ -245,7 +249,7 @@ npm run lint       # Análise de código com ESLint
 - **ESLint:** Configurado com `next/core-web-vitals`, analisa código em busca de problemas e desvios de estilo
 
 **Estratégia de Testes:**
-Atualmente o projeto não possui suíte de testes automatizados, focando na prototipagem rápida e implementação das funcionalidades interativas. Uma melhoria futura seria introduzir testes com **Jest** e **React Testing Library** para validar comportamento dos componentes e interações do usuário.
+O projeto possui uma base mínima de testes com o runner nativo do Node (`node --test`), localizada em `tests/`. Essa suíte valida configurações essenciais e pode ser expandida para cobrir componentes e fluxos principais.
 
 ## 🚢 Deployment Detalhado e Escalabilidade
 
