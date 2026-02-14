@@ -1,306 +1,422 @@
-# Seven Days of Code: Uma Exploração Interativa de Fundamentos da Programação
+<div align="center">
 
-**Codificando a Lógica: Uma Jornada Prática Através de Desafios Fundamentais com Next.js e React.**
+# Seven Days of Code
 
-<p align="center">
-  <a href="https://seven-of-days-code.vercel.app" target="_blank" rel="noopener noreferrer">
-    <img src="https://img.shields.io/badge/🚀%20Ver%20Demo%20Online-000000?style=for-the-badge&logo=vercel&logoColor=white" alt="Demo Online">
-  </a>
-</p>
+[![CI](https://img.shields.io/github/actions/workflow/status/ESousa97/seven-of-days-code/ci.yml?style=flat&logo=github-actions&logoColor=white)](https://github.com/ESousa97/seven-of-days-code/actions/workflows/ci.yml)
+[![Security](https://img.shields.io/github/actions/workflow/status/ESousa97/seven-of-days-code/codeql.yml?style=flat&logo=github&logoColor=white&label=security)](https://github.com/ESousa97/seven-of-days-code/actions/workflows/codeql.yml)
+[![CodeFactor](https://img.shields.io/codefactor/grade/github/ESousa97/seven-of-days-code?style=flat&logo=codefactor&logoColor=white)](https://www.codefactor.io/repository/github/esousa97/seven-of-days-code)
+[![Last Commit](https://img.shields.io/github/last-commit/ESousa97/seven-of-days-code?style=flat&logo=git&logoColor=white)](https://github.com/ESousa97/seven-of-days-code)
+[![Language](https://img.shields.io/github/languages/top/ESousa97/seven-of-days-code?style=flat&logo=javascript&logoColor=white)](https://github.com/ESousa97/seven-of-days-code)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat&logo=opensourceinitiative&logoColor=white)](https://opensource.org/licenses/MIT)
+[![Status](https://img.shields.io/badge/Status-Archived-lightgrey.svg?style=flat&logo=archive&logoColor=white)](#)
+
+**Aplicação web educacional para exploração interativa de fundamentos da programação através de desafios práticos com Next.js e React.**
+
+[Ver Demo Online](https://seven-of-days-code.vercel.app)
+
+</div>
 
 ---
 
-## Abstract (Resumo Técnico)
+> **⚠️ Projeto Arquivado**
+> Este projeto não recebe mais atualizações ou correções. O código permanece disponível como referência e pode ser utilizado livremente sob a licença MIT. Fique à vontade para fazer fork caso deseje continuar o desenvolvimento.
 
-Este projeto, intitulado "Seven Days of Code", materializa-se como uma aplicação web educacional desenvolvida em resposta ao desafio homônimo da Alura. O seu propósito fundamental é transpor a lacuna entre o conhecimento teórico dos fundamentos da programação — como coerção de tipos, lógica condicional e gerenciamento de estado — e sua aplicação pragmática no ecossistema de desenvolvimento web moderno. 
+---
 
-O desafio central abordado é a dificuldade que aprendizes frequentemente encontram em visualizar e interagir com conceitos lógicos abstratos. A solução proposta consiste em uma aplicação single-page composta por três módulos interativos e autocontidos, onde cada um encapsula um desafio de programação fundamental, permitindo ao usuário explorar e compreender as consequências de suas decisões em tempo real.
+## Índice
 
-A metodologia empregada baseia-se em um stack tecnológico robusto e contemporâneo, utilizando Next.js 14 como framework de base, React 18 para interface reativa, e Tailwind CSS para um sistema de design utility-first. O resultado é uma ferramenta pedagógica que não apenas resolve os desafios propostos, mas também demonstra proficiência em práticas de desenvolvimento front-end moderno.
+- [Sobre o Projeto](#sobre-o-projeto)
+- [Demonstração](#demonstração)
+- [Arquitetura](#arquitetura)
+- [Funcionalidades](#funcionalidades)
+- [Tecnologias](#tecnologias)
+- [Começando](#começando)
+  - [Pré-requisitos](#pré-requisitos)
+  - [Instalação](#instalação)
+  - [Uso Local](#uso-local)
+- [Scripts Disponíveis](#scripts-disponíveis)
+- [Estrutura do Projeto](#estrutura-do-projeto)
+- [Casos de Uso](#casos-de-uso)
+- [Testes](#testes)
+- [Deploy](#deploy)
+- [FAQ](#faq)
+- [Contribuição](#contribuição)
+- [Licença](#licença)
+- [Contato](#contato)
 
-## Badges Abrangentes
+---
 
-![JavaScript](https://img.shields.io/github/languages/top/ESousa97/seven-of-days-code?style=flat&label=javascript&labelColor=1f2937&color=2563eb)
-![Repo size](https://img.shields.io/github/repo-size/ESousa97/seven-of-days-code?style=flat&label=repo%20size&labelColor=1f2937&color=0ea5e9)
-![Last commit](https://img.shields.io/github/last-commit/ESousa97/seven-of-days-code?style=flat&label=last%20commit&labelColor=1f2937&color=10b981)
-![Contributors](https://img.shields.io/github/contributors/ESousa97/seven-of-days-code?style=flat&label=contributors&labelColor=1f2937&color=6366f1)
-[![CI](https://img.shields.io/github/actions/workflow/status/ESousa97/seven-of-days-code/ci.yml?branch=main&style=flat&label=CI&labelColor=1f2937&color=22c55e)](https://github.com/ESousa97/seven-of-days-code/actions/workflows/ci.yml)
-[![CodeQL](https://img.shields.io/github/actions/workflow/status/ESousa97/seven-of-days-code/codeql.yml?branch=main&style=flat&label=CodeQL&labelColor=1f2937&color=3b82f6)](https://github.com/ESousa97/seven-of-days-code/actions/workflows/codeql.yml)
-[![CodeFactor](https://img.shields.io/codefactor/grade/github/ESousa97/seven-of-days-code?style=flat&label=code%20quality&labelColor=1f2937&color=ef4444)](https://www.codefactor.io/repository/github/ESousa97/seven-of-days-code)
-![CodeRefator](https://img.shields.io/badge/coderefator-A%2B-8b5cf6?style=flat&labelColor=1f2937)
+## Sobre o Projeto
 
-## Sumário (Table of Contents)
+Seven Days of Code é uma aplicação web educacional desenvolvida em resposta ao desafio homônimo da Alura. O propósito fundamental é transpor a lacuna entre o conhecimento teórico dos fundamentos da programação e sua aplicação pragmática no ecossistema de desenvolvimento web moderno.
 
-1. [Introdução e Motivação](#introdução-e-motivação)
-2. [🔗 Link Principal / Acesso ao Projeto](#-link-principal--acesso-ao-projeto)
-3. [Arquitetura do Sistema](#arquitetura-do-sistema)
-4. [Decisões de Design Chave](#decisões-de-design-chave)
-5. [✨ Funcionalidades Detalhadas (com Casos de Uso)](#-funcionalidades-detalhadas-com-casos-de-uso)
-6. [🛠️ Tech Stack Detalhado](#️-tech-stack-detalhado)
-7. [📂 Estrutura Detalhada do Código-Fonte](#-estrutura-detalhada-do-código-fonte)
-8. [📋 Pré-requisitos Avançados](#-pré-requisitos-avançados)
-9. [🚀 Guia de Instalação e Configuração Avançada](#-guia-de-instalação-e-configuração-avançada)
-10. [⚙️ Uso Avançado e Exemplos](#️-uso-avançado-e-exemplos)
-11. [🧪 Estratégia de Testes e Qualidade de Código](#-estratégia-de-testes-e-qualidade-de-código)
-12. [🚢 Deployment Detalhado e Escalabilidade](#-deployment-detalhado-e-escalabilidade)
-13. [❓ FAQ (Perguntas Frequentes)](#-faq-perguntas-frequentes)
-14. [📜 Licença e Aspectos Legais](#-licença-e-aspectos-legais)
-15. [📞 Contato](#-contato)
+O desafio central abordado é a dificuldade que aprendizes frequentemente encontram em visualizar e interagir com conceitos lógicos abstratos. A solução consiste em uma aplicação single-page composta por três módulos interativos e autocontidos, onde cada um encapsula um desafio de programação fundamental.
 
-## Introdução e Motivação
+O repositório implementa:
 
-A programação, em sua essência, é a arte de instruir uma máquina através da lógica. No entanto, a transição dos conceitos lógicos — como tipos de dados, operadores de comparação, estruturas condicionais e fluxo de controle — do plano abstrato para a implementação prática em aplicações ricas e interativas representa um desafio significativo para desenvolvedores em formação.
+- **Módulos Interativos** — Três projetos independentes explorando conceitos fundamentais
+- **Feedback Visual Imediato** — Toda interação gera resposta visual clara e imediata
+- **Arquitetura Moderna** — Next.js 14 App Router com React 18
+- **Type-Safety Completa** — TypeScript em toda a base de código
+- **Design Responsivo** — Tailwind CSS com sistema de design customizado
+- **Deploy Automatizado** — CI/CD integrado com Vercel
 
-Este projeto nasceu da motivação de superar essa barreira, inspirado pelo desafio **"7 Days of Code"** da Alura. O objetivo transcendeu a mera conclusão das tarefas propostas; a visão era construir uma aplicação web polida, coesa e pedagogicamente valiosa. A proposta de valor central reside em transformar exercícios de lógica, que poderiam ser triviais, em componentes web tangíveis, visualmente atraentes e interativos.
+---
 
-## 🔗 Link Principal / Acesso ao Projeto
+## Demonstração
 
-A aplicação está disponível publicamente e pode ser acessada para interação e análise. Explore os projetos, interaja com os formulários e visualize os resultados em tempo real.
+![Demonstração do projeto](public/demo.gif)
 
-<p align="center">
-  <a href="https://seven-of-days-code.vercel.app" target="_blank" rel="noopener noreferrer">
-    <img src="https://img.shields.io/badge/Acessar%20Projeto%20Online-007BFF?style=for-the-badge&logo=vercel&logoColor=white&labelColor=000000" alt="Link para o Projeto Online">
-  </a>
-</p>
+**Acesse o projeto online:** [seven-of-days-code.vercel.app](https://seven-of-days-code.vercel.app)
 
-## Arquitetura do Sistema
+---
 
-A aplicação foi concebida como um **Monólito Front-end** com renderização primariamente no lado do cliente (Client-Side Rendering - CSR), utilizando a arquitetura do **App Router** do Next.js. Essa escolha oferece um ambiente de desenvolvimento estruturado, otimizações de build e um caminho claro para futuras expansões.
+## Arquitetura
+
+### Arquitetura do Sistema
+
+A aplicação foi concebida como um **Monólito Front-end** com renderização primariamente no lado do cliente (Client-Side Rendering - CSR), utilizando a arquitetura do **App Router** do Next.js.
 
 ```mermaid
 graph TD
     subgraph "Browser"
-        A[👤 Usuário]
+        A[Usuário]
     end
 
-    subgraph "Aplicação Next.js (Hospedada na Vercel)"
-        B(RootLayout: layout.tsx) -- Contém --> C{HomePage: page.tsx}
-        C -- Carrega Dinamicamente --> P1[<br><b>Project1.tsx</b><br>Comparador de Tipos]
-        C -- Carrega Dinamicamente --> P2[<br><b>Project2.tsx</b><br>Formulário de Aprendizado]
-        C -- Carrega Dinamicamente --> P3[<br><b>Project3.tsx</b><br>Jogo de Carreira]
+    subgraph "Aplicação Next.js - Hospedada na Vercel"
+        B(RootLayout: layout.tsx) --> C{HomePage: page.tsx}
+        C --> P1[Project1.tsx - Comparador de Tipos]
+        C --> P2[Project2.tsx - Formulário de Aprendizado]
+        C --> P3[Project3.tsx - Jogo de Carreira]
 
-        subgraph "Módulos Interativos (Estado no Cliente)"
-            P1 -- Gerencia Estado com --> S1[React State: useState, useEffect]
-            P2 -- Gerencia Estado com --> S2[React State: useState]
-            P3 -- Gerencia Estado com --> S3[React State: useState]
+        subgraph "Estado no Cliente"
+            P1 --> S1[React State]
+            P2 --> S2[React State]
+            P3 --> S3[React State]
         end
 
-        subgraph "Sistema de Design (Tailwind CSS)"
-            T[tailwind.config.ts] -- Configura --> G[globals.css]
-            B -- Estilizado por --> G
-            C -- Estilizado por --> G
-            P1 -- Estilizado por --> G
-            P2 -- Estilizado por --> G
-            P3 -- Estilizado por --> G
+        subgraph "Sistema de Design"
+            T[tailwind.config.ts] --> G[globals.css]
+            B --> G
+            C --> G
         end
     end
 
-    A -- Interage com --> B
+    A -->|Interage| B
 ```
 
-**Justificativa Arquitetural:**
+### Decisões Arquiteturais
 
-- **Next.js App Router:** Fornece uma base sólida com roteamento baseado em sistema de arquivos, otimizações automáticas e excelente experiência de desenvolvimento
-- **Arquitetura de Componentes:** Cada projeto é um componente React independente, facilitando manutenção e raciocínio sobre o código
-- **Gerenciamento de Estado Local:** Complexidade contida dentro de cada componente usando hooks nativos do React
-- **Importações Dinâmicas:** Code-splitting aplicado via `next/dynamic`, melhorando o tempo de carregamento inicial
+- **Next.js App Router** — Base sólida com roteamento baseado em sistema de arquivos
+- **Arquitetura de Componentes** — Cada projeto é um componente React independente
+- **Gerenciamento de Estado Local** — Hooks nativos do React (useState, useEffect)
+- **Importações Dinâmicas** — Code-splitting via `next/dynamic` para otimização
+- **Tailwind CSS** — Abordagem utility-first para criação rápida de UI customizada
 
-## Decisões de Design Chave
+---
 
-1. **TypeScript como Padrão:** Adoção fundamental para garantir segurança de tipos, qualidade do código e experiência de desenvolvimento superior através de autocompletar e análise estática.
+## Funcionalidades
 
-2. **Tailwind CSS para Sistema de Design Customizado:** Abordagem utility-first permitindo criação rápida de UI totalmente personalizada e responsiva, conforme evidenciado pela extensa configuração em `tailwind.config.ts`.
+### 1. Comparador de Tipos
 
-3. **Renderização no Cliente com Otimizações:** A natureza interativa e dependente do estado dos projetos torna CSR a abordagem natural, enriquecida pelas otimizações do Next.js.
+Demonstra a diferença crítica entre igualdade flexível (`==`) e estrita (`===`) em JavaScript, mostrando coerção de tipo de forma visual.
 
-4. **Estrutura Orientada a Funcionalidades:** Componentes organizados por funcionalidade, promovendo clara separação de responsabilidades.
-
-5. **Feedback Visual Imediato:** Diretriz central garantindo que toda interação gere resposta visual clara e imediata para reforçar o aprendizado.
-
-## ✨ Funcionalidades Detalhadas (com Casos de Uso)
-
-### 1. Comparações de Variáveis
-
-**Propósito:** Elucidar a diferença crítica entre igualdade flexível (`==`) e estrita (`===`) em JavaScript, demonstrando coerção de tipo de forma visual.
-
-**Caso de Uso:** Um desenvolvedor júnior insere o número `1` no primeiro campo e a string `'1'` no segundo. A interface exibe resultado com ícone de aviso (⚠️) e mensagem: `"1 == '1' → Mesmos valores com coerção de tipo"`, fornecendo compreensão instantânea e contextualizada.
+**Exemplo:** Comparar número `1` com string `'1'` exibe resultado com mensagem contextualizada sobre coerção de tipo.
 
 ### 2. Formulário de Aprendizado
 
-**Propósito:** Exercitar manuseio de formulários, validação de entradas, gerenciamento de estado e renderização condicional baseada nas respostas.
+Exercita manuseio de formulários, validação de entradas, gerenciamento de estado e renderização condicional baseada nas respostas do usuário.
 
-**Caso de Uso:** Estudante preenche formulário com nome, idade e linguagem de programação. Ao selecionar "Sim, estou gostando", o formulário é substituído por card de sucesso (🎉) com mensagem personalizada. Se selecionar "Não", renderiza card diferente (🤔) sugerindo outras linguagens e caminhos.
+**Exemplo:** Usuário preenche dados e recebe feedback personalizado baseado em suas escolhas.
 
 ### 3. Jogo de Escolhas de Carreira
 
-**Propósito:** Simular árvore de decisão (wizard passo a passo), gerenciando estado construído progressivamente através de múltiplas interações.
+Simula árvore de decisão (wizard passo a passo), gerenciando estado construído progressivamente através de múltiplas interações.
 
-**Caso de Uso:** Usuário aspirante a desenvolvedor:
-1. **Passo 1:** Escolhe "Front-End"
-2. **Passo 2:** Seleciona "React" 
-3. **Passo 3:** Escolhe "Especialização"
-4. **Passo 4:** Adiciona tecnologias como "TypeScript" e "Next.js"
-5. **Conclusão:** Exibe resumo completo do "plano de carreira" escolhido
+**Exemplo:** Usuário escolhe área (Front-End/Back-End), tecnologias e tipo de especialização, recebendo resumo completo ao final.
 
-## 🛠️ Tech Stack Detalhado
+---
 
-| Categoria | Tecnologia | Versão | Propósito no Projeto | Justificativa da Escolha |
-| :--- | :--- | :--- | :--- | :--- |
-| **Framework** | **Next.js** | `14.2.4` | Estrutura principal, roteamento e otimizações | Padrão da indústria para aplicações React, arquitetura robusta (App Router) |
-| **Biblioteca UI** | **React** | `^18` | Interface baseada em componentes e gerenciamento de estado | Ecossistema maduro, paradigma declarativo para UIs interativas |
-| **Linguagem** | **TypeScript** | `^5` | Superset do JavaScript com tipagem estática | Robustez, prevenção de bugs, manutenibilidade e autocompletar |
-| **Estilização** | **Tailwind CSS** | `^3.4.1` | Framework CSS utility-first para design system | Prototipagem rápida, UIs complexas sem sair do HTML/JSX |
-| **Linting** | **ESLint** | `^8` | Análise estática para qualidade e consistência | Ferramenta essencial para manter qualidade de código |
-| **Ger. Pacotes**| **npm** | (Padrão Node.js) | Gerenciamento das dependências | Gerenciador padrão do ecossistema Node.js |
-| **Deployment** | **Vercel** | N/A | Hospedagem e CI/CD | Melhor experiência para projetos Next.js, builds automatizados |
+## Tecnologias
 
-## 📂 Estrutura Detalhada do Código-Fonte
+### Core
 
-```
-seven-of-days-code-main/
-├── .next/                # Diretório de build do Next.js (ignorado)
-├── node_modules/         # Dependências do projeto (ignorado)
-├── components/           # Componentes React reutilizáveis
-│   └── projects/         # Componentes dos 3 projetos principais
-│       ├── Project1.tsx  # Lógica e UI do Projeto 1
-│       ├── Project2.tsx  # Lógica e UI do Projeto 2
-│       └── Project3.tsx  # Lógica e UI do Projeto 3
-├── public/               # Ativos estáticos
-│   ├── demo.gif          # GIF de demonstração do projeto
-│   ├── next.svg
-│   └── vercel.svg
-├── src/                  # Código-fonte principal
-│   └── app/              # Estrutura do App Router do Next.js
-│       ├── favicon.ico   # Ícone do site
-│       ├── globals.css   # Estilos globais e customizações Tailwind
-│       ├── layout.tsx    # Layout raiz (html, body, header, footer)
-│       └── page.tsx      # Página principal (rota '/'), renderiza projetos
-├── .eslintrc.json        # Configuração do ESLint
-├── .gitignore            # Arquivos ignorados pelo Git
-├── next.config.mjs       # Configuração do Next.js
-├── package.json          # Manifesto: scripts, dependências, metadados
-├── tailwind.config.ts    # Configuração e customização do Tailwind
-└── tsconfig.json         # Configuração do compilador TypeScript
+![Next.js](https://img.shields.io/badge/Next.js-000000?style=flat&logo=nextdotjs&logoColor=white)
+![React](https://img.shields.io/badge/React-61DAFB?style=flat&logo=react&logoColor=black)
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat&logo=typescript&logoColor=white)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=flat&logo=tailwind-css&logoColor=white)
+
+### Ferramentas de Desenvolvimento
+
+![ESLint](https://img.shields.io/badge/ESLint-4B32C3?style=flat&logo=eslint&logoColor=white)
+![Vercel](https://img.shields.io/badge/Vercel-000000?style=flat&logo=vercel&logoColor=white)
+
+| Categoria | Tecnologia | Versão | Propósito |
+|-----------|------------|--------|-----------|
+| **Framework** | Next.js | 14.2.4 | Estrutura principal, roteamento e otimizações |
+| **Biblioteca UI** | React | ^18 | Interface baseada em componentes |
+| **Linguagem** | TypeScript | ^5 | Tipagem estática e robustez |
+| **Estilização** | Tailwind CSS | ^3.4.1 | Framework CSS utility-first |
+| **Linting** | ESLint | ^8 | Análise estática de código |
+| **Deployment** | Vercel | N/A | Hospedagem e CI/CD |
+
+**Requisitos mínimos:**
+
+- Node.js 18.17.0+ (recomendado)
+- npm 9.6.7+
+- Git (latest)
+
+---
+
+## Começando
+
+### Pré-requisitos
+
+```bash
+node --version  # v18.17.0 ou superior
+npm --version   # v9.6.7 ou superior
 ```
 
-## 📋 Pré-requisitos Avançados
+**Editor recomendado:** Visual Studio Code com extensões:
+- ESLint
+- Prettier - Code formatter
+- Tailwind CSS IntelliSense
 
-Para executar este projeto localmente:
+### Instalação
 
-- **Node.js**: Versão `18.17.0` ou superior
-- **npm**: Versão `9.6.7` ou superior (instalado com Node.js)
-- **Git**: Para clonar o repositório
-- **Editor de Código**: Recomenda-se Visual Studio Code com extensões:
-  - ESLint
-  - Prettier - Code formatter
-  - Tailwind CSS IntelliSense
+1. **Clone o repositório**
 
-## 🚀 Guia de Instalação e Configuração Avançada
-
-1. **Clonar o Repositório:**
 ```bash
 git clone https://github.com/ESousa97/seven-of-days-code.git
-```
-
-2. **Navegar para o Diretório:**
-```bash
 cd seven-of-days-code
 ```
 
-3. **Instalar Dependências:**
+2. **Instale as dependências**
+
 ```bash
 npm install
 ```
 
-4. **Configuração de Ambiente:**
-Este projeto não requer arquivo `.env` pois não se conecta a serviços externos.
+### Uso Local
 
-5. **Iniciar Servidor de Desenvolvimento:**
+**Subir o servidor de desenvolvimento:**
+
 ```bash
 npm run dev
 ```
 
-6. **Acessar a Aplicação:**
-Abra [http://localhost:3000](http://localhost:3000). Alterações no código são refletidas automaticamente com Fast Refresh.
+Acesse: `http://localhost:3000`
 
-### Scripts Disponíveis
+Alterações no código são refletidas automaticamente com Fast Refresh.
+
+---
+
+## Scripts Disponíveis
+
 ```bash
-npm run dev        # Servidor de desenvolvimento com Fast Refresh
-npm run build      # Build de produção otimizado
-npm run start      # Executa build de produção localmente
-npm run lint       # Análise de código com ESLint
-npm test           # Executa testes automatizados
+# Servidor de desenvolvimento com Fast Refresh
+npm run dev
+
+# Build de produção otimizado
+npm run build
+
+# Executa build de produção localmente
+npm run start
+
+# Análise de código com ESLint
+npm run lint
+
+# Executar testes automatizados
+npm test
 ```
 
-## ⚙️ Uso Avançado e Exemplos
+---
 
-**Inspeção de Componentes:** Use React DevTools para inspecionar a árvore de componentes e observar mudanças de estado/props em tempo real.
+## Estrutura do Projeto
 
-**Modificação da Lógica:** Experimente alterar a lógica nos componentes:
-- Em `Project2.tsx`: Modifique mensagens condicionais ou adicione categorias de idade
-- Em `Project3.tsx`: Adicione nova área de carreira (ex: "Data Science") com sub-opções
+```
+seven-of-days-code/
+├── .next/                    # Build do Next.js (ignorado)
+├── node_modules/             # Dependências (ignorado)
+├── components/
+│   └── projects/
+│       ├── Project1.tsx      # Comparador de Tipos
+│       ├── Project2.tsx      # Formulário de Aprendizado
+│       └── Project3.tsx      # Jogo de Carreira
+├── public/
+│   ├── demo.gif              # Demonstração do projeto
+│   ├── next.svg
+│   └── vercel.svg
+├── src/
+│   └── app/
+│       ├── favicon.ico       # Ícone do site
+│       ├── globals.css       # Estilos globais + Tailwind
+│       ├── layout.tsx        # Layout raiz (html, body)
+│       └── page.tsx          # Página principal
+├── tests/                    # Testes automatizados
+├── .eslintrc.json            # Configuração ESLint
+├── .gitignore                # Arquivos ignorados
+├── next.config.mjs           # Configuração Next.js
+├── package.json              # Dependências e scripts
+├── tailwind.config.ts        # Configuração Tailwind
+├── tsconfig.json             # Configuração TypeScript
+└── README.md                 # Este arquivo
+```
 
-**Experimentação com Estilos:** Altere classes Tailwind nos arquivos `.tsx` ou modifique o tema em `tailwind.config.ts` para ver impacto visual imediato.
+---
 
-## 🧪 Estratégia de Testes e Qualidade de Código
+## Casos de Uso
 
-**Qualidade de Código:**
-- **TypeScript:** Garante segurança de tipos, prevenindo erros em tempo de execução
-- **ESLint:** Configurado com `next/core-web-vitals`, analisa código em busca de problemas e desvios de estilo
+### Caso de Uso 1: Comparador de Tipos
 
-**Estratégia de Testes:**
-O projeto possui uma base mínima de testes com o runner nativo do Node (`node --test`), localizada em `tests/`. Essa suíte valida configurações essenciais e pode ser expandida para cobrir componentes e fluxos principais.
+**Cenário:** Desenvolvedor júnior aprende sobre coerção de tipos.
 
-## 🚢 Deployment Detalhado e Escalabilidade
+**Ação:** Insere número `1` no primeiro campo e string `'1'` no segundo.
 
-**Plataforma:** Implantado na **Vercel**, plataforma otimizada para frameworks front-end.
+**Resultado:** Interface exibe mensagem: "1 == '1' → Mesmos valores com coerção de tipo" com ícone de aviso, fornecendo compreensão instantânea.
 
-**Processo CI/CD:**
-1. `git push` para branch `main` aciona build automático na Vercel
-2. Vercel instala dependências, executa `next build` e otimiza ativos
-3. Build bem-sucedido é implantado atomicamente sem downtime
-4. Pull Requests geram Deploy Previews para revisão isolada
+### Caso de Uso 2: Formulário de Aprendizado
 
-**Escalabilidade:** Arquitetura inerentemente escalável servida pela Edge Network global da Vercel. Ativos cacheados em múltiplos locais garantem baixa latência mundial com escalabilidade praticamente infinita.
+**Cenário:** Estudante explora feedback condicional.
 
-## ❓ FAQ (Perguntas Frequentes)
+**Ação:** Preenche formulário com nome, idade e linguagem. Seleciona "Sim, estou gostando".
 
-**P: Por que usar Next.js para aplicação client-side?**
-**R:** Next.js oferece ecossistema superior: servidor de desenvolvimento rápido com Fast Refresh, otimizações automáticas (minificação, code-splitting), roteamento robusto e deployment simples via Vercel. Fornece base sólida facilmente extensível com funcionalidades server-side futuras.
+**Resultado:** Formulário é substituído por card de sucesso com mensagem personalizada.
 
-**P: Existem dependências de backend?**
-**R:** Não. O projeto é 100% front-end. Toda lógica e estado são gerenciados no navegador, sem comunicação com backend ou banco de dados.
+### Caso de Uso 3: Jogo de Carreira
 
-**P: Como adicionar novo projeto?**
-**R:** Processo modular:
+**Cenário:** Usuário planeja caminho de aprendizado.
+
+**Passos:**
+1. Escolhe "Front-End"
+2. Seleciona "React"
+3. Escolhe "Especialização"
+4. Adiciona "TypeScript" e "Next.js"
+
+**Resultado:** Exibe resumo completo do plano de carreira escolhido.
+
+---
+
+## Testes
+
+### Estratégia de Testes
+
+O projeto possui suíte de testes básica usando o runner nativo do Node (`node --test`), localizada em `tests/`.
+
+```bash
+# Executar testes
+npm test
+```
+
+### Qualidade de Código
+
+- **TypeScript** — Segurança de tipos e prevenção de erros
+- **ESLint** — Configurado com `next/core-web-vitals`
+- **Análise estática** — Validação automática em cada commit
+
+---
+
+## Deploy
+
+### Plataforma
+
+Implantado na **Vercel**, plataforma otimizada para frameworks front-end.
+
+### Processo CI/CD
+
+1. `git push` para branch `main` aciona build automático
+2. Vercel executa `next build` e otimiza ativos
+3. Build bem-sucedido é implantado atomicamente
+4. Pull Requests geram Deploy Previews
+
+### Escalabilidade
+
+Arquitetura servida pela Edge Network global da Vercel. Ativos cacheados em múltiplos locais garantem baixa latência mundial.
+
+**URL de produção:** [seven-of-days-code.vercel.app](https://seven-of-days-code.vercel.app)
+
+---
+
+## FAQ
+
+### Por que usar Next.js para aplicação client-side?
+
+Next.js oferece servidor de desenvolvimento rápido com Fast Refresh, otimizações automáticas (minificação, code-splitting), roteamento robusto e deployment simples via Vercel. Fornece base sólida facilmente extensível.
+
+### Existem dependências de backend?
+
+Não. O projeto é 100% front-end. Toda lógica e estado são gerenciados no navegador.
+
+### Como adicionar novo projeto?
+
 1. Crie componente React em `components/projects/`
 2. Importe dinamicamente em `src/app/page.tsx` usando `next/dynamic`
 3. Adicione nova `<section>` no JSX seguindo estrutura existente
 
-**P: O projeto é responsivo?**
-**R:** Sim, totalmente responsivo através do Tailwind CSS, adaptando-se a diferentes tamanhos de tela com breakpoints otimizados.
+### O projeto é responsivo?
 
-## 📜 Licença e Aspectos Legais
-
-Este projeto é distribuído sob a **Licença MIT**, permitindo uso, cópia, modificação, distribuição e venda, desde que o aviso de copyright seja incluído. Para detalhes completos, consulte o arquivo [LICENSE](https://github.com/ESousa97/seven-of-days-code/blob/main/LICENSE).
-
-## 📞 Contato
-
-- **GitHub:** [@ESousa97](https://github.com/ESousa97)
-- **LinkedIn:** [Enoque Sousa](https://www.linkedin.com/in/enoque-sousa-bb89aa168/)
-- **Issues:** Para bugs e sugestões, use [GitHub Issues](https://github.com/ESousa97/seven-of-days-code/issues)
+Sim, totalmente responsivo através do Tailwind CSS, adaptando-se a diferentes tamanhos de tela.
 
 ---
 
-<p align="center">
-  <img src="https://img.shields.io/github/stars/ESousa97/seven-of-days-code?style=social" alt="GitHub Stars">
-  <img src="https://img.shields.io/github/forks/ESousa97/seven-of-days-code?style=social" alt="GitHub Forks">
-</p>
+## Contribuição
 
-<p align="center">
-  <em>Desenvolvido com ❤️ por José Enoque - Transformando conceitos abstratos em experiências tangíveis</em>
-</p>
+Contribuições são bem-vindas! Para contribuir:
 
+1. **Fork o projeto**
+2. **Crie uma branch para sua feature:**
+   ```bash
+   git checkout -b feature/minha-feature
+   ```
+3. **Commit suas mudanças:**
+   ```bash
+   git commit -m "Adiciona nova funcionalidade"
+   ```
+4. **Push para a branch:**
+   ```bash
+   git push origin feature/minha-feature
+   ```
+5. **Abra um Pull Request**
 
-> ✨ **Criado em:** 5 de jul. de 2024 às 23:27
+### Diretrizes
 
+- Siga os padrões de código existentes
+- Adicione testes para novas funcionalidades
+- Atualize a documentação quando necessário
+- Reporte bugs através das [Issues](https://github.com/ESousa97/seven-of-days-code/issues)
+
+---
+
+## Licença
+
+Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
+
+```
+MIT License - você pode usar, copiar, modificar e distribuir este código.
+```
+
+---
+
+## Contato
+
+**José Enoque Costa de Sousa**
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=flat&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/enoque-sousa-bb89aa168/)
+[![GitHub](https://img.shields.io/badge/GitHub-100000?style=flat&logo=github&logoColor=white)](https://github.com/SousaDev97)
+[![Portfolio](https://img.shields.io/badge/Portfolio-FF5722?style=flat&logo=todoist&logoColor=white)](https://enoquesousa.vercel.app)
+
+**Encontrou um bug?** [Abra uma Issue](https://github.com/ESousa97/seven-of-days-code/issues)  
+**Tem uma sugestão?** [Inicie uma Discussion](https://github.com/ESousa97/seven-of-days-code/discussions)  
+**Precisa de ajuda?** Entre em contato via LinkedIn
+
+---
+
+<div align="center">
+
+**[⬆ Voltar ao topo](#seven-days-of-code)**
+
+Feito com ❤️ por [José Enoque](https://github.com/SousaDev97)
+
+**Status do Projeto:** Archived — Sem novas atualizações
+
+</div>
