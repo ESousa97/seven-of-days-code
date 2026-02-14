@@ -7,9 +7,66 @@ interface ComparisonResult {
   type: 'same-value-type' | 'same-value-diff-type' | 'different-value';
 }
 
+interface InputValues {
+  numeroUm: string;
+  stringUm: string;
+  numeroTrinta: string;
+  stringTrinta: string;
+  numeroDez: string;
+  stringDez: string;
+}
+
+interface ComparisonMessages {
+  sameValueDiffType: string;
+  looseEquality: string;
+  differentValue: string;
+}
+
+interface ComparisonConfig {
+  id: string;
+  numberValue: string;
+  stringValue: string;
+  messages: ComparisonMessages;
+}
+
+const buildComparisonResult = ({
+  id,
+  numberValue,
+  stringValue,
+  messages
+}: ComparisonConfig): ComparisonResult | null => {
+  if (!numberValue || !stringValue) {
+    return null;
+  }
+
+  const parsedNumber = parseFloat(numberValue);
+
+  if (!isNaN(parsedNumber) && parsedNumber.toString() === stringValue) {
+    return {
+      id,
+      message: `${numberValue} === "${stringValue}" ${messages.sameValueDiffType}`,
+      type: 'same-value-diff-type'
+    };
+  }
+
+  if (numberValue == stringValue) {
+    return {
+      id,
+      message: `${numberValue} == "${stringValue}" ${messages.looseEquality}`,
+      type: 'same-value-diff-type'
+    };
+  }
+
+  return {
+    id,
+    message: `${numberValue} ≠ "${stringValue}" ${messages.differentValue}`,
+    type: 'different-value'
+  };
+};
+
 const Project1: React.FC = () => {
   const [comparisons, setComparisons] = useState<ComparisonResult[]>([]);
-  const [inputValues, setInputValues] = useState({
+  const [inputValues, setInputValues] = useState<InputValues>({
     numeroUm: '',
     stringUm: '',
     numeroTrinta: '',
@@ -19,87 +76,42 @@ const Project1: React.FC = () => {
   });
 
   useEffect(() => {
-    const results: ComparisonResult[] = [];
-
-    // Comparação entre numeroUm e stringUm
-    if (inputValues.numeroUm && inputValues.stringUm) {
-      const numUm = parseFloat(inputValues.numeroUm);
-      const strUm = inputValues.stringUm;
-      
-      if (!isNaN(numUm) && numUm.toString() === strUm) {
-        if (typeof numUm === typeof parseFloat(strUm)) {
-          results.push({
-            id: 'comp1',
-            message: `${inputValues.numeroUm} === "${inputValues.stringUm}" → As variáveis têm o mesmo valor, mas tipos diferentes (number vs string)`,
-            type: 'same-value-diff-type'
-          });
+    const comparisonConfigs: ComparisonConfig[] = [
+      {
+        id: 'comp1',
+        numberValue: inputValues.numeroUm,
+        stringValue: inputValues.stringUm,
+        messages: {
+          sameValueDiffType: '→ As variáveis têm o mesmo valor, mas tipos diferentes (number vs string)',
+          looseEquality: '→ Mesmos valores com coerção de tipo',
+          differentValue: '→ Valores diferentes'
         }
-      } else if (inputValues.numeroUm == inputValues.stringUm) {
-        results.push({
-          id: 'comp1',
-          message: `${inputValues.numeroUm} == "${inputValues.stringUm}" → Mesmos valores com coerção de tipo`,
-          type: 'same-value-diff-type'
-        });
-      } else {
-        results.push({
-          id: 'comp1',
-          message: `${inputValues.numeroUm} ≠ "${inputValues.stringUm}" → Valores diferentes`,
-          type: 'different-value'
-        });
+      },
+      {
+        id: 'comp2',
+        numberValue: inputValues.numeroTrinta,
+        stringValue: inputValues.stringTrinta,
+        messages: {
+          sameValueDiffType: '→ Valores iguais, mas tipos diferentes',
+          looseEquality: '→ Igualdade com coerção',
+          differentValue: '→ Valores diferentes'
+        }
+      },
+      {
+        id: 'comp3',
+        numberValue: inputValues.numeroDez,
+        stringValue: inputValues.stringDez,
+        messages: {
+          sameValueDiffType: '→ Valores iguais, mas tipos diferentes',
+          looseEquality: '→ Igualdade com coerção',
+          differentValue: '→ Valores diferentes'
+        }
       }
-    }
+    ];
 
-    // Comparação entre numeroTrinta e stringTrinta
-    if (inputValues.numeroTrinta && inputValues.stringTrinta) {
-      const numTrinta = parseFloat(inputValues.numeroTrinta);
-      const strTrinta = inputValues.stringTrinta;
-      
-      if (!isNaN(numTrinta) && numTrinta.toString() === strTrinta) {
-        results.push({
-          id: 'comp2',
-          message: `${inputValues.numeroTrinta} === "${inputValues.stringTrinta}" → Valores iguais, mas tipos diferentes`,
-          type: 'same-value-diff-type'
-        });
-      } else if (inputValues.numeroTrinta == inputValues.stringTrinta) {
-        results.push({
-          id: 'comp2',
-          message: `${inputValues.numeroTrinta} == "${inputValues.stringTrinta}" → Igualdade com coerção`,
-          type: 'same-value-diff-type'
-        });
-      } else {
-        results.push({
-          id: 'comp2',
-          message: `${inputValues.numeroTrinta} ≠ "${inputValues.stringTrinta}" → Valores diferentes`,
-          type: 'different-value'
-        });
-      }
-    }
-
-    // Comparação entre numeroDez e stringDez
-    if (inputValues.numeroDez && inputValues.stringDez) {
-      const numDez = parseFloat(inputValues.numeroDez);
-      const strDez = inputValues.stringDez;
-      
-      if (!isNaN(numDez) && numDez.toString() === strDez) {
-        results.push({
-          id: 'comp3',
-          message: `${inputValues.numeroDez} === "${inputValues.stringDez}" → Valores iguais, mas tipos diferentes`,
-          type: 'same-value-diff-type'
-        });
-      } else if (inputValues.numeroDez == inputValues.stringDez) {
-        results.push({
-          id: 'comp3',
-          message: `${inputValues.numeroDez} == "${inputValues.stringDez}" → Igualdade com coerção`,
-          type: 'same-value-diff-type'
-        });
-      } else {
-        results.push({
-          id: 'comp3',
-          message: `${inputValues.numeroDez} ≠ "${inputValues.stringDez}" → Valores diferentes`,
-          type: 'different-value'
-        });
-      }
-    }
+    const results = comparisonConfigs
+      .map(buildComparisonResult)
+      .filter((result): result is ComparisonResult => result !== null);
 
     setComparisons(results);
   }, [inputValues]);
